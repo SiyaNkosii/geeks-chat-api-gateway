@@ -1,0 +1,12 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9000
+gateway:
+  routes:
+    -id: GeeksChat-Api-gateway
+    uri: http://localhost:8085
+    predicates:
+     -Path=/geeks-chat-service/users/login
